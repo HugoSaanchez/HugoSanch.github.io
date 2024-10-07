@@ -1,0 +1,22 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #000; /* Fondo negro */
+  color: #ffffff; /* Texto blanco */
+  display: flex; /* Usar flexbox para centrar contenido */
+}
+
+nav {
+  width: 200px; /* Ancho del menú de navegación */
+  background-color: #222; /* Color del fondo del menú */
+  height: 100vh; /* Altura completa de la ventana */
+}
+
+.content {
+  flex: 1; /* Rellenar el espacio restante */
+  display: flex;
+  justify-content: center; /* Centrar horizontalmente */
+  align-items: center; /* Centrar verticalmente */
+  height: 100vh; /* Altura completa de la ventana */
+}
