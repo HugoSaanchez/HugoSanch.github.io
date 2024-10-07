@@ -8,15 +8,148 @@ body {
 }
 
 nav {
+  position: fixed; /* Fija el nav a la izquierda */
+  top: 0;
+  left: 0;
   width: 200px; /* Ancho del menú de navegación */
   background-color: #222; /* Color del fondo del menú */
   height: 100vh; /* Altura completa de la ventana */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centrar elementos en el nav */
+  padding-top: 20px; /* Espaciado superior */
+}
+
+.profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centrar contenido */
+}
+
+.profile img {
+  width: 100px; /* Ancho de la imagen */
+  height: 100px; /* Alto de la imagen */
+  border-radius: 50%; /* Hacer la imagen circular */
+  border: 3px solid #ffffff; /* Borde blanco */
+}
+
+.profile h2 {
+  margin-top: 10px; /* Espacio entre la imagen y el nombre */
+  text-align: center;
+  font-size: 1.2em; /* Tamaño de fuente para el nombre */
+}
+
+.languages, .frameworks {
+  margin-top: 20px; /* Espacio superior para las secciones */
+  text-align: center; /* Centrar el texto */
+}
+
+.languages h3, .frameworks h3 {
+  margin: 0; /* Eliminar margen por defecto */
+}
+
+.languages ul, .frameworks ul {
+  list-style-type: none; /* Eliminar los puntos de la lista */
+  padding: 0; /* Eliminar el padding */
+}
+
+.languages li, .frameworks li {
+  margin: 5px 0; /* Espacio entre los elementos de la lista */
+}
+
+.contacto {
+  margin-top: 20px; /* Espacio superior para la sección de contacto */
+  text-align: center; /* Centrar el texto */
+}
+
+.contacto h3 {
+  margin: 0; /* Eliminar margen por defecto */
+}
+
+.contacto ul {
+  list-style-type: none; /* Eliminar los puntos de la lista */
+  padding: 0; /* Eliminar el padding */
+}
+
+.contacto li {
+  margin: 5px 0; /* Espacio entre los elementos de la lista */
+}
+
+/* Estilos para los enlaces */
+.contacto a, .content a {
+  color: white; /* Cambia el color del texto a blanco */
+  text-decoration: none; /* Elimina el subrayado */
+}
+
+.contacto a:hover, .content a:hover {
+  text-decoration: underline; /* Agrega subrayado al pasar el ratón */
+}
+
+.contact-item {
+  text-align: center; /* Centra los íconos y enlaces */
+  margin: 10px 0; /* Espacio entre cada ítem */
+}
+
+.contact-item i {
+  display: block; /* Hace que el ícono se muestre como un bloque */
+  font-size: 24px; /* Tamaño del ícono */
+  color: white; /* Color del ícono */
+}
+
+.contact-item a {
+  color: white; /* Color del texto del enlace */
+  text-decoration: none; /* Sin subrayado */
+}
+
+.contact-item a:hover {
+  text-decoration: underline; /* Subrayar al pasar el ratón */
+}
+
+.github-icon {
+  font-size: 36px; /* Cambia este valor al tamaño que desees */
+}
+
+.matriz-video {
+  width: 50%; /* Ajusta este valor según el tamaño deseado */
+  max-width: 300px; /* Opcional: establece un tamaño máximo */
+  height: auto; /* Mantiene la proporción de la imagen */
+  display: block; /* Para centrar la imagen si es necesario */
+  margin: 0 auto; /* Para centrar la imagen horizontalmente */
+}
+
+.content h2 {
+  margin-top: 40px; /* Espacio superior */
+}
+
+.content ul {
+  list-style-type: none; /* Eliminar los puntos de la lista */
+  padding: 0; /* Eliminar el padding */
+}
+
+.content li {
+  margin: 10px 0; /* Espacio entre los elementos de la lista */
+}
+.content ul li {
+  margin-bottom: 15px; /* Ajusta este valor según lo que necesites */
+}
+
+#matriz-video, #paycar {
+  margin-top: 800px; /* Ajusta este valor según lo que necesites para el espacio superior */
+}
+
+#estudiantil {
+  margin-top: 800px; 
+  margin-bottom: 800px; 
 }
 
 .content {
   flex: 1; /* Rellenar el espacio restante */
-  display: flex;
   justify-content: center; /* Centrar horizontalmente */
   align-items: center; /* Centrar verticalmente */
-  height: 100vh; /* Altura completa de la ventana */
+  margin-left: 220px; /* Añadir margen izquierdo para el espacio del nav */
+  padding: 20px; /* Espaciado adicional para el contenido */
+  height: auto; /* Altura automática para el contenido */
+}
+html {
+  scroll-behavior: smooth; /* Habilita el desplazamiento suave */
 }
