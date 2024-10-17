@@ -9,33 +9,74 @@
 </head>
 <body>
 
-  <nav>
-    <a href="index.html">Volver al Portafolio</a>
-  </nav>
+  <div class="matrizvideo">
+    <h2>Implementación de un Sistema de Matriz de Vídeo</h2> 
 
-  <section id="matriz-video">
-    <h2>Implementación de un Sistema de Matriz de Vídeo</h2>
-    <h3>Resumen</h3>
     <p>
-      Este proyecto consiste en desarrollar una aplicación que gestiona una matriz de vídeo, permitiendo la 
-      distribución de señales de vídeo desde varios transmisores a múltiples receptores. Los receptores 
-      pueden conectarse a un solo transmisor a la vez, mientras que los transmisores pueden enviar señal a 
-      múltiples receptores simultáneamente. La aplicación permite configurar y gestionar esta matriz, 
-      facilitando la organización de transmisores y receptores, y guardando configuraciones en perfiles para 
-      una fácil selección.
+      Este proyecto consiste en desarrollar una aplicación de gestión de una matriz de vídeo,
+      que permite la distribución de señales de vídeo desde varios transmisores a múltiples receptores.
+      Un receptor solo puede conectarse a un transmisor a la vez, mientras que 
+      un transmisor puede enviar señal a múltiples receptores simultáneamente.
     </p>
-    <h3>Herramientas y Tecnologías</h3>
+
     <p>
-      La aplicación se desarrollará en .NET 8 (C#) utilizando Blazor Server y Visual Studio. 
-      Se puede usar MySQL para la base de datos y se permiten paquetes NuGet según sea necesario.
+      La aplicación facilitará la configuración y gestión de la matriz de vídeo, permitiendo que las configuraciones se guarden en perfiles, que estarán identificados con un nombre para facilitar la selección y cambio entre configuraciones predefinidas.
     </p>
+
+    <h3>Funcionalidades principales:</h3>
+    <ul>
+      <li><strong>Creación y configuración de dispositivos:</strong> Los usuarios pueden crear, editar y eliminar dispositivos receptores y transmisores. Cada dispositivo tiene un nombre, una dirección IP (informativa) y un estado (Encendido, Espera, Apagado).</li>
+     
+    <div class="image-container">
+      <img src="imgs/CreacionMatriz.png" alt="Imagen Horizontal 1" onclick="openModal(this.src)">
+    </div>
+      <li><strong>Visualización en cuadrícula:</strong> Los receptores y transmisores se mostrarán en un formato de cuadrícula. Si el dispositivo está encendido, mostrará la imagen que esté transmitiendo o recibiendo.</li>
+      <div class="image-container">
+        <img src="imgs/MatrizVideo.png" alt="Imagen Horizontal 1" onclick="openModal(this.src)">
+      </div>
+      <li><strong>Asignación y gestión de perfiles:</strong> Un sistema sencillo permitirá asignar qué receptores están conectados a qué transmisores, y se podrán crear perfiles guardando sus configuraciones, lo que permitirá cambiar rápidamente de configuración según el perfil seleccionado.</li>
+      <div class="image-container">
+     
+     
+        <img src="imgs/GestionPerfiles.png" alt="Imagen Horizontal 2" onclick="openModal(this.src)">
+      </div>
+    </ul>
+
+    <h3>Herramientas y Tecnologías:</h3>
+    <p>
+      La aplicación se desarrollará en .NET 8 (C#) utilizando Blazor Server y Visual Studio como entorno de desarrollo. 
+      Se utilizará MySQL como base de datos preferente, y se permitirán paquetes NuGet según sea necesario.
+    </p>
+
+   
+
     <p>
       <a href="https://github.com/hugosanchezgarcia/nombre-del-repositorio" target="_blank">
         <i class="fab fa-github github-icon"></i>
         Ver en GitHub
       </a>
     </p>
-  </section>
+  </div>
+
+  <!-- Modal para imagen ampliada -->
+  <div id="modal" class="modal" onclick="closeModal()">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <img id="modalImage" src="" alt="Imagen Ampliada">
+  </div>
+
+  <script>
+    function openModal(src) {
+      const modal = document.getElementById('modal');
+      const modalImage = document.getElementById('modalImage');
+      modal.style.display = 'flex'; // Mostrar el modal
+      modalImage.src = src; // Asignar la fuente de la imagen ampliada
+    }
+
+    function closeModal() {
+      const modal = document.getElementById('modal');
+      modal.style.display = 'none'; // Ocultar el modal
+    }
+  </script>
 
 </body>
 </html>
