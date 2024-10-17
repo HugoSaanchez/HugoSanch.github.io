@@ -2,9 +2,9 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #000; /* Fondo negro */
+  background-color: #222831; /* Fondo negro */
   color: #ffffff; /* Texto blanco */
-  display: flex; /* Usar flexbox para centrar contenido */
+
 }
 
 nav {
@@ -12,7 +12,7 @@ nav {
   top: 0;
   left: 0;
   width: 200px; /* Ancho del menú de navegación */
-  background-color: #222; /* Color del fondo del menú */
+  background-color: #31363F; /* Color del fondo del menú */
   height: 100vh; /* Altura completa de la ventana */
   display: flex;
   flex-direction: column;
@@ -133,9 +133,6 @@ nav {
   margin-bottom: 15px; /* Ajusta este valor según lo que necesites */
 }
 
-#matriz-video, #paycar {
-  margin-top: 800px; /* Ajusta este valor según lo que necesites para el espacio superior */
-}
 
 #estudiantil {
   margin-top: 800px; 
@@ -153,3 +150,47 @@ nav {
 html {
   scroll-behavior: smooth; /* Habilita el desplazamiento suave */
 }
+.matrizvideo {
+  flex-wrap: wrap; /* Permitir que las imágenes se envuelvan */
+  justify-content: space-between; /* Espacio uniforme entre imágenes */
+  margin: 20px; /* Ajusta el margen según lo necesites (arriba, derecha, abajo, izquierda) */
+}
+
+
+.matrizvideo img {
+  margin: 10px; /* Espacio entre imágenes */
+  max-width: 20%; /* Ajusta el tamaño máximo según sea necesario */
+  height: auto; /* Mantener proporción de la imagen */
+  cursor: pointer; /* Cambiar cursor al pasar sobre la imagen */
+}
+
+/* Estilos para el modal */
+.modal {
+  display: none; /* Ocultar el modal por defecto */
+  position: fixed; /* Fijar posición en la pantalla */
+  z-index: 1000; /* Asegurar que esté encima de otros elementos */
+  left: 0;
+  top: 0;
+  width: 100%; /* Ancho completo */
+  height: 100%; /* Alto completo */
+  background-color: rgba(0, 0, 0, 0.8); /* Fondo negro con opacidad */
+  justify-content: center; /* Centrar contenido horizontalmente */
+  align-items: center; /* Centrar contenido verticalmente */
+}
+
+.modal img {
+  max-width: 90%; /* Ancho máximo de la imagen en el modal */
+  max-height: 90%; /* Alto máximo de la imagen en el modal */
+}
+
+.close {
+  position: absolute; /* Posicionar el botón de cierre */
+  top: 20px;
+  right: 30px;
+  color: white;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+
+
