@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Implementación de un Sistema de Matriz de Vídeo</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+  <div class="matrizvideo">
+    <h2>PayCar</h2>
+
+    <p>
+      PayCar es una aplicación creada para resolver el problema de la distribución equitativa de los gastos de gasolina durante viajes en grupo. Muchas veces, el conductor asume la mayor parte de los costos, lo que genera desacuerdos entre amigos. Con PayCar, los gastos de gasolina se registran y dividen automáticamente entre los pasajeros, proporcionando una solución práctica, justa y transparente para todos los involucrados.
+    </p>
+    
+
+   
+
+    <h3>Funcionalidades principales:</h3>
+<ul>
+  <li><strong>Registro de gastos:</strong> El conductor puede registrar los gastos de gasolina en la aplicación, lo que facilita el control y monitoreo de los costos durante el viaje.</li>
+  
+  <li><strong>División automática de costos:</strong> La app calcula automáticamente el costo total de la gasolina y lo divide equitativamente entre los pasajeros, asegurando que todos paguen un porcentaje justo.</li>
+
+  <li><strong>Chat integrado:</strong> Permite a los viajeros comunicarse entre sí a través de un sistema de mensajería incorporado en la aplicación, facilitando la organización del viaje.</li>
+  
+  <li><strong>Alquiler de vehículos:</strong> PayCar ofrece la posibilidad de alquilar vehículos, permitiendo a los usuarios gestionar tanto los gastos de gasolina como la contratación de coches para sus viajes.</li>
+
+  <li><strong>Transparencia en los pagos:</strong> Tanto el conductor como los pasajeros pueden visualizar de manera clara quién ha pagado y cuánto, promoviendo la equidad en la distribución de los costos.</li>
+</ul>
+
+
+<h3>Herramientas y Tecnologías:</h3>
+<p><strong>Backend:</strong></p>
+<ul>
+  <li>Desarrollado en <strong>Java</strong> utilizando <strong>Spring</strong> como framework principal para la lógica del servidor.</li>
+  <li>Base de datos gestionada con <strong>MySQL</strong>.</li>
+  <li>Control de versiones implementado con <strong>GitHub</strong>.</li>
+  <li>Despliegue realizado en <strong>Render</strong> con base de datos en la nube utilizando <strong>Railway</strong>.</li>
+</ul>
+
+<p><strong>Frontend:</strong></p>
+<ul>
+  <li>Aplicación móvil creada con <strong>Flutter</strong> utilizando <strong>Dart</strong> como lenguaje de programación.</li>
+  <li>Integración con el backend a través de una API desarrollada en <strong>Eclipse</strong>.</li>
+  <li>Pruebas de API realizadas con <strong>Postman</strong>.</li>
+</ul>
+
+
+   
+
+    <p>
+      <a href="https://github.com/hugosanchezgarcia/nombre-del-repositorio" target="_blank">
+        <i class="fab fa-github github-icon"></i>
+        Ver en GitHub
+      </a>
+    </p>
+  </div>
+
+  <!-- Modal para imagen ampliada -->
+  <div id="modal" class="modal" onclick="closeModal()">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <img id="modalImage" src="" alt="Imagen Ampliada">
+  </div>
+
+  <script>
+    function openModal(src) {
+      const modal = document.getElementById('modal');
+      const modalImage = document.getElementById('modalImage');
+      modal.style.display = 'flex'; // Mostrar el modal
+      modalImage.src = src; // Asignar la fuente de la imagen ampliada
+    }
+
+    function closeModal() {
+      const modal = document.getElementById('modal');
+      modal.style.display = 'none'; // Ocultar el modal
+    }
+  </script>
+
+</body>
+</html>
