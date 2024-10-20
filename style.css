@@ -27,7 +27,7 @@ main {
 
 .project-card {
     background-color: #162447; /* Fondo de la card */
-    border: 2px solid #00ff00; /* Borde verde */
+    border: 2px solid #6b5b95; /* Borde verde */
     border-radius: 10px;
     margin: 15px;
     padding: 20px;
@@ -36,7 +36,9 @@ main {
 }
 
 .project-card img {
-    width: 100%;
+    width: 100%; /* Ocupa todo el ancho del contenedor */
+    height: 200px; /* Ajusta la altura de las imágenes */
+    object-fit: cover; /* Recorta la imagen para que llene el espacio sin deformarse */
     border-radius: 10px;
 }
 
@@ -47,7 +49,7 @@ h2 {
 h3 {
     margin: 5px 0;
     font-size: 14px;
-    color: #00ff00; /* Texto verde para tecnologías */
+    color: #6b5b95; /* Texto verde para tecnologías */
 }
 
 p {
@@ -505,10 +507,113 @@ section {
 
 .experience-item h3 {
     margin: 0; /* Sin margen para los títulos de las experiencias */
-    color: #00ff00; /* Color verde para los títulos de las experiencias */
+    color: #99a4e0; /* Color verde para los títulos de las experiencias */
 }
 
 .experience-item p {
     margin: 5px 0; /* Espaciado entre los párrafos */
     line-height: 1.5; /* Espacio entre líneas */
+}
+
+.carousel {
+    overflow: hidden; /* Oculta las imágenes que salen del contenedor */
+    width: 100%; /* Ancho del contenedor */
+    max-width: 600px; /* Ancho máximo del carrusel */
+    margin: 0 auto; /* Centra el carrusel horizontalmente */
+}
+
+.carousel-track {
+    display: flex; /* Alinea las imágenes en fila */
+    transition: transform 0.5s ease; /* Animación suave al cambiar */
+}
+
+.carousel img {
+    width: 38%; /* Cada imagen ocupa un tercio del ancho del carrusel */
+    flex-shrink: 0; /* Evita que las imágenes se encojan */
+    object-fit: cover; /* Asegura que las imágenes se ajusten al contenedor */
+}
+.project-links {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Espacio entre los enlaces */
+}
+
+.project-links a {
+    text-decoration: none;
+    color: #6b5b95; /* Color del texto */
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+}
+
+.project-links a:hover {
+    color: #007bff; /* Color al pasar el cursor */
+}
+
+.project-links i {
+    margin-right: 8px; /* Espacio entre el icono y el texto */
+}
+
+@media (max-width: 768px) {
+    .project-card {
+        width: 90%; /* Ajustar el ancho en móviles */
+    }
+
+    .skills {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* Dos íconos por fila */
+        gap: 20px; /* Espacio entre íconos */
+        justify-items: center; /* Centra los íconos horizontalmente */
+        align-items: center; /* Centra los íconos verticalmente */
+    }
+    
+    .skill img {
+        width: 60px; /* Ajusta el tamaño de los íconos */
+        height: auto; /* Mantén la proporción */
+    }
+    
+    .skill {
+        text-align: center; /* Centra el texto debajo del ícono */
+    }
+    
+
+
+  .projects {
+    display: grid;
+    grid-template-columns: 1fr; /* Una columna por fila */
+    justify-items: center; /* Centrar los proyectos horizontalmente */
+    gap: 20px; /* Espacio entre cada tarjeta de proyecto */
+    width: 100%; /* Ocupar todo el ancho disponible */
+}
+
+.project-card {
+    width: 80%; /* Ajusta el ancho de cada tarjeta de proyecto para que no sea demasiado grande */
+    padding: 20px; /* Espaciado interno */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para darle un poco de profundidad */
+    border-radius: 8px; /* Bordes redondeados */
+    text-align: center; /* Centrar el contenido dentro de la tarjeta */
+}
+
+
+    /* Ajustar el ancho del contenedor de experiencia */
+    .experience-content {
+        max-width: 90%; /* Ajustar el ancho en móviles */
+    }
+    
+    .about-me-content {
+        flex-direction: column; /* Cambiar a columna en móviles */
+        align-items: center; /* Centrar el contenido */
+    }
+
+    .profile-picture {
+        margin-right: 0; /* Eliminar margen en móviles */
+        margin-bottom: 15px; /* Espacio debajo de la foto */
+    }
+
+    .carousel img {
+        width: 60%; /* Ajustar el ancho de las imágenes del carrusel */
+        max-width: 100px; /* Ancho máximo para evitar que sean muy grandes */
+        height: auto; /* Mantener la relación de aspecto */
+    }
 }
