@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mi Portafolio</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style2.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
@@ -223,24 +223,126 @@
         <div class="projects">
             <div class="project-card">
         
-                <img src="imgs/MatrizVideo.png" alt="Video matriz de video">
+                <img src="imgs/safasfffffffffff-removebg-preview.png" alt="Video matriz de video">
                 <h2>Matriz de Video</h2>
                 <h3>C# Blazor SQL</h3>
                 <p>Desarrollo de una aplicación para gestionar una matriz de vídeo, que distribuye señales de vídeo desde varios transmisores a múltiples receptores. Un receptor se conecta a un solo transmisor a la vez, mientras que un transmisor puede enviar señal a varios receptores simultáneamente.</p>
+             <br>
+         
+                <div class="project-links">
+                    <a href="https://github.com/tu-repositorio" target="_blank">
+                        <i class="fab fa-github"></i> GitHub
+                    </a>
+                    <br>
+                    <a href="videomatriz.html" target="_blank">
+                        <i class="fas fa-external-link-alt"></i> Ver más
+                    </a>
+                </div>
             </div>
             <div class="project-card">
-                <img src="ruta/a/tu-imagen2.jpg" alt="Proyecto 2">
+                <img src="imgs/75880.png" alt="Proyecto 2">
                 <h2>Paycar</h2>
                 <h3>Java Spring Flutter SQL</h3>
                 <p>PayCar es una aplicación creada para resolver el problema de la distribución equitativa de los gastos de gasolina durante viajes en grupo. Muchas veces, el conductor asume la mayor parte de los costos, lo que genera desacuerdos entre amigos. Con PayCar, los gastos de gasolina se registran y dividen automáticamente entre los pasajeros, proporcionando una solución práctica, justa y transparente para todos los involucrados.</p>
+               <br>
+                <div class="project-links">
+                    <a href="https://github.com/tu-repositorio" target="_blank">
+                        <i class="fab fa-github"></i> GitHub
+                    </a>
+                    <a href="paycar.html" target="_blank">
+                        <i class="fas fa-external-link-alt"></i> Ver más
+                    </a>
+                </div>
             </div>
             <div class="project-card">
-                <img src="ruta/a/tu-imagen3.jpg" alt="Proyecto 3">
+                <img src="imgs/Sin_títuloassaf-removebg-preview.png" alt="Proyecto 3">
                 <h2>Gestión de Servicios</h2>
                 <h3>Java Spring SQL</h3>
                 <p>Este proyecto consiste en desarrollar una plataforma web de gestión de servicios, ofrecidos por alumnos de distintas familias profesionales del centro educativo. La plataforma gestiona tres tipos de usuarios: alumnos, empresas y administradores.</p>
+                <br>
+            
+                <div class="project-links">
+                    <a href="https://github.com/tu-repositorio" target="_blank">
+                        <i class="fab fa-github"></i> GitHub
+                    </a>
+                    <a href="gestionservicios.html" target="_blank">
+                        <i class="fas fa-external-link-alt"></i> Ver más
+                    </a>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <img src="imgs/Captura_de_pantalla_2024-10-20_164630-removebg-preview.png" alt="Proyecto 3">
+                <h2>MidnCare</h2>
+                <h3>PHP Laravel Dart Flutter SQL</h3>
+                <p>Este proyecto consiste en desarrollar una plataforma web de gestión de servicios, ofrecidos por alumnos de distintas familias profesionales del centro educativo. La plataforma gestiona tres tipos de usuarios: alumnos, empresas y administradores.</p>
+                <br>
+           
+                <div class="project-links">
+                    <a href="https://github.com/tu-repositorio" target="_blank">
+                        <i class="fab fa-github"></i> GitHub
+                    </a>
+                    <a href="https://otra-pagina.com" target="_blank">
+                        <i class="fas fa-external-link-alt"></i> Ver más
+                    </a>
+                </div>
             </div>
         </div>
+        <br>
+        <h2 class="centered">Certificaciones</h2>
+        <br>
+        <div class="carousel">
+            <div class="carousel-track">
+                <img src="imgs/090276b8_1.png" alt="Imagen 1">
+                <img src="imgs/1af87fd9_1.png" alt="Imagen 2">
+                <img src="imgs/7b769293_1.png" alt="Imagen 3">
+                <img src="imgs/9d32ee23_1.png" alt="Imagen 4">
+                <img src="imgs/ee3e462f_1.png" alt="Imagen 5">
+            </div>
+        </div>
+        
     </main>
+
+ 
+    <script>
+        const track = document.querySelector('.carousel-track');
+const images = Array.from(track.children);
+const imageCount = images.length;
+const visibleImages = 3;
+let currentIndex = 0;
+
+// Añadir clones de las primeras imágenes al final para un efecto infinito
+for (let i = 0; i < visibleImages; i++) {
+    const clone = images[i].cloneNode(true);
+    track.appendChild(clone);
+}
+
+// Cambiar el ancho del track para incluir las imágenes clonadas
+track.style.width = `${(imageCount + visibleImages) * (100 / visibleImages)}%`;
+
+function updateCarousel() {
+    currentIndex++;
+    
+    // Mover la pista de imágenes
+    const offset = -currentIndex * (114 / visibleImages);
+    track.style.transform = `translateX(${offset}%)`;
+    
+    // Reiniciar el índice si se alcanza el final de las imágenes originales
+    if (currentIndex >= imageCount) {
+        currentIndex = 0;
+        track.style.transition = 'none'; // Desactivar la transición
+        track.style.transform = 'translateX(0)'; // Volver al principio
+
+        // Rehabilitar la transición después de un breve retraso
+        setTimeout(() => {
+            track.style.transition = 'transform 0.5s ease'; // Rehabilitar la transición
+        }, 50);
+    }
+}
+
+// Cambiar de imagen cada 3 segundos
+setInterval(updateCarousel, 3000);
+
+    </script>
 </body>
 </html>
