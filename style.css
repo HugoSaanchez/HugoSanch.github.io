@@ -44,6 +44,7 @@ main {
 
 h2 {
     margin: 10px 0;
+    
 }
 
 h3 {
@@ -470,8 +471,8 @@ section {
 }
 
 .profile-picture {
-    width: 150px; /* Ajusta el tamaño de la foto */
-    height: 150px; /* Ajusta el tamaño de la foto */
+    width: 300px; /* Ajusta el tamaño de la foto */
+    height: 300px; /* Ajusta el tamaño de la foto */
     border-radius: 50%; /* Crea un borde redondeado */
     overflow: hidden; /* Asegura que la imagen redonda no se salga del borde */
     margin-right: 20px; /* Espacio entre la foto y el texto */
@@ -555,6 +556,124 @@ section {
     margin-right: 8px; /* Espacio entre el icono y el texto */
 }
 
+/* Estilos para el nav fijo */
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #162447;
+    border-bottom: 2px solid #6b5b95;
+    z-index: 1000;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    margin: 0;
+    padding: 1em 0;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    padding: 10px 20px;
+    transition: background-color 0.3s;
+}
+
+nav ul li a:hover {
+    background-color: #6b5b95;
+}
+
+/* Aseguramos que el contenido no se esconda detrás del nav */
+main {
+    padding-top: 70px; /* Ajusta según la altura de tu nav */
+}
+
+/* Añadir margen al desplazarse hacia las secciones */
+#sobre-mi, #habilidades, #proyectos, #certificaciones,#experiencia {
+    scroll-margin-top: 80px; /* Ajusta este valor para que no se tape el contenido */
+}
+
+/* Otros estilos */
+.centered {
+    text-align: center;
+}
+
+.about-me-content {
+    margin-top: 20px;
+    padding: 20px;
+}
+
+.profile-picture img {
+    max-width: 150px;
+    border-radius: 50%;
+    display: block;
+    margin: 0 auto;
+}
+/* Estilos para el contenido "Sobre mí" */
+#sobre-mi {
+    line-height: 1.6;  /* Incrementa el espaciado entre líneas para mejorar la legibilidad */
+    margin: 40px 20px; /* Añade margen alrededor del texto */
+}
+
+#sobre-mi h2 {
+    margin-bottom: 20px; /* Espacio inferior para separar del párrafo */
+}
+
+#sobre-mi p {
+    font-size: 1rem; /* Ajusta el tamaño del párrafo */
+    margin-bottom: 15px; /* Espacio entre los párrafos */
+    text-align: justify; /* Justifica el texto para una presentación más formal */
+}
+
+.about-text {
+    max-width: 800px; /* Limita el ancho del texto para evitar que sea demasiado largo en pantallas grandes */
+    margin: 0 auto; /* Centra el contenido horizontalmente */
+}
+
+/* Estilos para el título "Experiencia" */
+.experience-content h2 {
+    font-weight: bold;
+
+    color: #fff;
+}
+
+/* Estilos para el contenido de experiencia */
+.experience-item {
+    font-size: 1.5rem; /* Texto más grande para el contenido */
+    line-height: 1.8; /* Espaciado entre líneas */
+    color: #fff;
+
+    margin-bottom: 20px;
+}
+
+/* Para resaltar el nombre de la empresa y la duración */
+.experience-item strong {
+
+    font-size: 1.6rem;
+    color: #6b5b95;
+}
+
+.experience-item em {
+    font-size: 1.4rem;
+    color: #e0e0e0;
+    display: block;
+    margin-bottom: 10px;
+}
+
+#experiencia p {
+    font-size: 1rem;
+    margin-bottom: 15px;
+    text-align: justify;
+}
+
 @media (max-width: 768px) {
     .project-card {
         width: 90%; /* Ajustar el ancho en móviles */
@@ -611,9 +730,46 @@ section {
         margin-bottom: 15px; /* Espacio debajo de la foto */
     }
 
+    .carousel {
+        overflow: hidden; /* Oculta las imágenes que salen del contenedor */
+        width: 100%; /* Ancho del contenedor */
+        max-width: 600px; /* Ancho máximo del carrusel */
+        margin: 0 auto; /* Centra el carrusel horizontalmente */
+    }
+    
+    .carousel-track {
+        display: flex; /* Alinea las imágenes en fila */
+        transition: transform 0.5s ease; /* Animación suave al cambiar */
+    }
+    
     .carousel img {
-        width: 60%; /* Ajustar el ancho de las imágenes del carrusel */
-        max-width: 100px; /* Ancho máximo para evitar que sean muy grandes */
-        height: auto; /* Mantener la relación de aspecto */
+        width: 38%; /* Cada imagen ocupa un tercio del ancho del carrusel */
+        flex-shrink: 0; /* Evita que las imágenes se encojan */
+        object-fit: cover; /* Asegura que las imágenes se ajusten al contenedor */
+    }
+    nav {
+        flex-direction: column; /* Cambiar a columna */
+        align-items: center; /* Centrados horizontalmente */
+    }
+
+    nav ul {
+        flex-direction: column; /* Cambiar a columna */
+        align-items: center; /* Alinear al centro */
+    }
+
+    nav ul li {
+        margin: 5px 0; /* Margen entre los elementos */
+    }
+
+    nav ul li a {
+        font-size: 0.9rem; /* Tamaño de fuente más pequeño en móviles */
+        padding: 5px 10px; /* Ajustar el espaciado alrededor del texto */
+    }
+    #sobre-mi,
+    #habilidades,
+    #proyectos,
+    #certificaciones,
+    #experiencia {
+        scroll-margin-top: 60px; /* Ajusta este valor para pantallas más pequeñas */
     }
 }
